@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Nicolas Orefice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Define the custom color variables for the fiery modern palette */
+        :root {
+            --principal-color-l: #bc3d29; /* Deep brick red */
+            --secondary-color-l: #f7a355; /* Soft orange */
+            --background-color-l: #ffffff; /* Pure white */
+            --text-color-l: #333333; /* Dark gray for good readability */
+            --hover-color-l: #ff6347; /* Tomato red for interactions */
+            --accent-color-l: #c10000; /* Vivid red for striking elements */
+            --light-red-l: #ffc1c1; /* Light red for subtle backgrounds */
+            --soft-white-l: #f5f5f5; /* Off-white for soft contrasts */
+        }
+
+        /* Base styles applied to the body and default font */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color-l);
+            color: var(--text-color-l);
+            line-height: 1.6;
+        }
+
+        /* Custom utility classes using CSS variables for easy application with Tailwind */
+        .bg-principal { background-color: var(--principal-color-l); }
+        .text-principal { color: var(--principal-color-l); }
+        .bg-secondary { background-color: var(--secondary-color-l); }
+        .text-secondary { color: var(--secondary-color-l); }
+        .bg-accent { background-color: var(--accent-color-l); }
+        .text-accent { color: var(--accent-color-l); }
+        .bg-light-red { background-color: var(--light-red-l); }
+        .bg-soft-white { background-color: var(--soft-white-l); }
+
+        /* Button styles using the defined color variables */
+        .btn-primary {
+            background-color: var(--principal-color-l);
+            color: var(--background-color-l); /* White text on primary button */
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: var(--hover-color-l);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color-l);
+            color: var(--text-color-l); /* Dark gray text on secondary button */
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: var(--hover-color-l);
+            color: var(--background-color-l); /* White text on hover for secondary */
+        }
+
+        /* Link styles using the defined color variables */
+        a {
+            color: var(--principal-color-l);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: var(--hover-color-l);
+        }
+
+        /* Ensure elements have rounded corners as per the palette's aesthetic */
+        .rounded-lg { border-radius: 0.75rem; }
+        .rounded-xl { border-radius: 1rem; }
+        .rounded-full { border-radius: 9999px; }
+
+        /* Specific styles for the logo SVG to match the fiery theme */
+        .logo svg {
+            width: 100%;
+            height: auto;
+            max-width: 200px; /* Adjust as needed */
+            display: block;
+            margin: 0 auto;
+        }
+        .logo .dragon-body {
+            fill: var(--principal-color-l); /* Red fiery color for the body */
+        }
+        .logo .dragon-scales {
+            fill: none;
+            stroke: var(--secondary-color-l); /* Orange for circuitry lines */
+            stroke-width: 2;
+        }
+        .logo .dragon-eyes {
+            fill: var(--accent-color-l); /* Glowing vivid red for eyes */
+            filter: drop-shadow(0 0 8px var(--accent-color-l)); /* Glowing effect */
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <header class="bg-principal text-background-color-l shadow-md py-4">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <ul class="flex justify-center sm:justify-end space-x-6 text-lg font-medium">
+                <li><a href="#" class="text-background-color-l hover:text-soft-white-l transition-colors duration-300">Home</a></li>
+                <li><a href="#" class="text-background-color-l hover:text-soft-white-l transition-colors duration-300">About</a></li>
+                <li><a href="#" class="text-background-color-l hover:text-soft-white-l transition-colors duration-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <section class="bg-soft-white p-8 rounded-xl shadow-lg mb-8 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="presentation text-center md:text-left md:w-1/2">
+                <h2 class="text-5xl sm:text-6xl font-bold text-principal mb-2 leading-tight">Nicolas Orefice</h2>
+                <p class="text-2xl sm:text-3xl text-secondary font-medium">Robotic and IA Engineer</p>
+            </div>
+            <div class="logo md:w-1/2 flex justify-center items-center">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="fireGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="var(--principal-color-l)" />
+                            <stop offset="100%" stop-color="var(--accent-color-l)" />
+                        </linearGradient>
+                    </defs>
+                    <path class="dragon-body" fill="url(#fireGradient)" d="M100,10 C150,0 180,50 190,100 C180,150 150,200 100,190 C50,200 20,150 10,100 C20,50 50,0 100,10 Z" />
+                    <path class="dragon-scales" d="M30,100 Q50,70 70,100 Q90,130 110,100 Q130,70 150,100 Q170,130 190,100" />
+                    <path class="dragon-scales" d="M35,120 Q55,90 75,120 Q95,150 115,120 Q135,90 155,120 Q175,150 195,120" />
+                    <circle class="dragon-eyes" cx="80" cy="80" r="8" />
+                    <circle class="dragon-eyes" cx="120" cy="80" r="8" />
+                </svg>
+            </div>
+        </section>
+
+        
+
+        <section class="bg-soft-white p-8 rounded-xl shadow-lg mb-8">
+          <h3 class="text-3xl font-semibold text-principal mb-4">My Passions</h3>
+          <ul class="list-none text-text-color-l space-y-4">
+            <li class="flex items-center">
+              <img src="assets\code-svgrepo-com.svg" alt="Python Logo" class="w-6 h-6 mr-3">
+              <span>Development</span>
+            </li>
+            <li class="flex items-center">
+              <img src="assets\ai-svgrepo-com.svg" alt="AI Logo" class="w-6 h-6 mr-3">
+              <span>Artificial Intelligence and Machine Learning</span>
+            </li>
+            <li class="flex items-center">
+              <img src="assets\dragon-1-svgrepo-com.svg" alt="Sci-Fi Logo" class="w-6 h-6 mr-3">
+              <span>Sci-Fi and Fantasy Books</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="bg-background-color-l p-8 rounded-xl shadow-lg mb-8">
+  <h3 class="text-3xl font-semibold text-principal mb-4">Technologies Utilisées</h3>
+
+  <!-- Langages de Programmation -->
+  <div class="mb-6">
+    <h4 class="text-xl font-semibold text-secondary mb-2">Langages de Programmation</h4>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
+      <div class="bg-light-red p-4 rounded-lg shadow-sm">
+        <img src="https://www.svgrepo.com/show/376344/python.svg" alt="Python Logo" class="w-12 h-12 mx-auto mb-2">
+        <span class="text-principal font-medium">Python</span>
+      </div>
+      <div class="bg-light-red p-4 rounded-lg shadow-sm">
+        <img src="assets\cpp-svgrepo-com.svg" alt="C++ Logo" class="w-12 h-12 mx-auto mb-2">
+        <span class="text-principal font-medium">C++</span>
+      </div>
+      <div class="bg-light-red p-4 rounded-lg shadow-sm">
+        <img src="assets\html-5-svgrepo-com.svg" alt="Html" class="w-12 h-12 mx-auto mb-2">
+        <span class="text-principal font-medium">HTML</span>
+      </div>
+      <div class="bg-light-red p-4 rounded-lg shadow-sm">
+        <img src="assets\css-3-svgrepo-com.svg" alt="CSS" class="w-12 h-12 mx-auto mb-2">
+        <span class="text-principal font-medium">CSS</span>
+      </div>
+      <div class="bg-light-red p-4 rounded-lg shadow-sm">
+        <img src="assets\javascript-svgrepo-com.svg" alt="C++ Logo" class="w-12 h-12 mx-auto mb-2">
+        <span class="text-principal font-medium">Javascript</span>
+      </div>
+      <div class="bg-light-red p-4 rounded-lg shadow-sm">
+        <img src="assets\typescript-official-svgrepo-com.svg" alt="C++ Logo" class="w-12 h-12 mx-auto mb-2">
+        <span class="text-principal font-medium">TypeScript (notion)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Frameworks et Bibliothèques -->
+  <div class="mb-6">
+    <h4 class="text-xl font-semibold text-secondary mb-2">Frameworks et Bibliothèques</h4>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
+      <div class="bg-light-red p-4 rounded-lg shadow-sm">
+        <img src="https://www.svgrepo.com/show/354440/tensorflow.svg" alt="TensorFlow Logo" class="w-12 h-12 mx-auto mb-2">
+        <span class="text-principal font-medium">TensorFlow</span>
+      </div>
+      <div class="bg-light-red p-4 rounded-lg shadow-sm">
+        <img src="https://www.svgrepo.com/show/473778/scikitlearn.svg" alt="Scikit-Learn Logo" class="w-12 h-12 mx-auto mb-2">
+        <span class="text-principal font-medium">Scikit-Learn</span>
+      </div>
+      <div class="bg-light-red p-4 rounded-lg shadow-sm">
+        <img src="assets\keras-svgrepo-com.svg" alt="keras" class="w-12 h-12 mx-auto mb-2">
+        <span class="text-principal font-medium">Keras</span>
+      </div>
+      <div class="bg-light-red p-4 rounded-lg shadow-sm">
+        <img src="https://www.svgrepo.com/show/303157/react-logo.svg" alt="React Logo" class="w-12 h-12 mx-auto mb-2">
+        <span class="text-principal font-medium">React</span>
+      </div>
+      <div class="bg-light-red p-4 rounded-lg shadow-sm">
+        <img src="assets\svelte-svgrepo-com.svg" alt="React Native Logo" class="w-12 h-12 mx-auto mb-2">
+        <span class="text-principal font-medium">Svelte (notion)</span>
+      </div>
+      <div class="bg-light-red p-4 rounded-lg shadow-sm">
+        <img src="assets\scss2-svgrepo-com.svg" alt="React Native Logo" class="w-12 h-12 mx-auto mb-2">
+        <span class="text-principal font-medium">SCSS</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Outils et Protocoles -->
+  <div class="mb-6">
+    <h4 class="text-xl font-semibold text-secondary mb-2">Outils</h4>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
+      <div class="bg-light-red p-4 rounded-lg shadow-sm">
+        <img src="https://www.svgrepo.com/show/508968/solidworks.svg" alt="SolidWorks Logo" class="w-12 h-12 mx-auto mb-2">
+        <span class="text-principal font-medium">SolidWorks</span>
+      </div>
+      <div class="bg-light-red p-4 rounded-lg shadow-sm">
+        <img src="https://www.svgrepo.com/show/452210/git.svg" alt="Git Logo" class="w-12 h-12 mx-auto mb-2">
+        <span class="text-principal font-medium">Git</span>
+      </div>
+      <div class="bg-light-red p-4 rounded-lg shadow-sm">
+        <img src="assets\arduino-svgrepo-com.svg" alt="TCP/IP Logo" class="w-12 h-12 mx-auto mb-2">
+        <span class="text-principal font-medium">Arduino</span>
+      </div>
+      <div class="bg-light-red p-4 rounded-lg shadow-sm">
+        <img src="assets\rasberry-pi-svgrepo-com.svg" alt="TCP/IP Logo" class="w-12 h-12 mx-auto mb-2">
+        <span class="text-principal font-medium">Rasberry PI</span>
+      </div>
+      <div class="bg-light-red p-4 rounded-lg shadow-sm">
+        <img src="assets\robot-arm-1-svgrepo-com.svg" alt="TCP/IP Logo" class="w-12 h-12 mx-auto mb-2">
+        <span class="text-principal font-medium">ROS 2 (notion)</span>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+
+      <section class="bg-soft-white p-8 rounded-xl shadow-lg mb-8">
+  <h3 class="text-3xl font-semibold text-principal mb-4">My Projects</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    <!-- SEPHARD -->
+    <div class="bg-background-color-l p-6 rounded-lg shadow-md">
+      <h4 class="text-2xl font-semibold text-secondary mb-2">SEPHERD</h4>
+      <p class="text-text-color-l mb-4">
+        Proxy léger en C++ conçu pour interfacer avec le serveur Ollama LLM, optimisé pour les systèmes embarqués comme le Raspberry Pi.
+      </p>
+      <a href="https://github.com/Testeh69/Sephard" target="_blank" class="btn-primary inline-block text-sm">View Project</a>
+    </div>
+
+    <div class="bg-background-color-l p-6 rounded-lg shadow-md">
+      <h4 class="text-2xl font-semibold text-secondary mb-2">PySmithy</h4>
+      <p class="text-text-color-l mb-4">
+        Bibliothèque de machine learning combinant la performance de Rust avec la flexibilité de Python pour des applications efficaces et sûres.
+      </p>
+      <a href="https://github.com/Testeh69/Pysmithy" target="_blank" class="btn-primary inline-block text-sm">View Project</a>
+    </div>
+
+  
+
+    <!-- Tool Factory -->
+    <div class="bg-background-color-l p-6 rounded-lg shadow-md">
+      <h4 class="text-2xl font-semibold text-secondary mb-2">Tool Factory</h4>
+      <p class="text-text-color-l mb-4">
+        Application web testant l'architecture entre un robot UR5E et une machine de gravure via des protocoles comme XML-RPC ou TCP/IP.
+      </p>
+      <a href="https://github.com/Testeh69/Tool_Factory" target="_blank" class="btn-primary inline-block text-sm">View Project</a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="bg-background-color-l p-6 rounded-lg shadow-md">
+      <h4 class="text-2xl font-semibold text-secondary mb-2">RuneCLI</h4>
+      <p class="text-text-color-l mb-4">
+        Un RPG en ligne de commande développé en C++17, offrant une expérience rétro avec création de personnage, combats au tour par tour, gestion d'inventaire et progression via des commandes simples.
+      </p>
+      <a href="https://github.com/Testeh69" target="_blank" class="btn-primary inline-block text-sm">Voir les projets</a>
+    </div>
+ 
+
+  
+
+    <div class="bg-background-color-l p-6 rounded-lg shadow-md">
+      <h4 class="text-2xl font-semibold text-secondary mb-2">Stockly</h4>
+      <p class="text-text-color-l mb-4">
+        Stockly – Smart Inventory Management with QR Code Scanning
+      </p>
+      <a href="https://github.com/Testeh69/Stockly" target="_blank" class="btn-primary inline-block text-sm">View Project</a>
+    </div>
+
+  </div>
+</section>
+
+    </main>
+
+    <footer class="bg-principal text-background-color-l text-center py-6 mt-8 shadow-inner">
+        <div class="flex justify-center space-x-6 mb-4">
+            <a href="https://huggingface.co/Testeh" target="_blank" class="btn-primary inline-block text-sm">
+              <img src="assets\hugging-face-svgrepo-com.svg" alt="TensorFlow Logo" class="w-12 h-12 mx-auto mb-2">
+            </a>
+            <a href="https://www.linkedin.com/in/nicolas-orefice-ab0b5a251" target="_blank" class="btn-primary inline-block text-sm">
+              <img src="assets\linkedin-1-svgrepo-com.svg" alt="TensorFlow Logo" class="w-12 h-12 mx-auto mb-2">
+            </a>
+            <a href="https://github.com/Testeh69" target="_blank" class="btn-primary inline-block text-sm">
+            <img src="assets\github-142-svgrepo-com.svg" alt="TensorFlow Logo" class="w-12 h-12 mx-auto mb-2">
+          </a>
+        </div>
+    </footer>

@@ -101,26 +101,38 @@
 </head>
 <body class="min-h-screen flex flex-col">
     <header class="bg-principal text-background-color-l shadow-md py-4">
-          <nav class="bg-red-700 p-4 shadow-lg fixed top-0 left-0 w-full z-50">
+          <nav class="bg-gradient-to-r from-red-700 to-red-800 p-4 shadow-xl fixed top-0 left-0 w-full z-50">
     <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center">
       <!-- Brand/Logo Area -->
-      <a href="#home" class="text-white text-3xl font-extrabold tracking-wide mb-4 sm:mb-0 hover:text-red-100 transition-colors duration-300">
+      <a href="#home" class="text-white text-3xl font-extrabold tracking-wide mb-4 sm:mb-0 hover:text-red-100 transition-all duration-300 transform hover:scale-105">
         Nicolas Orefice
       </a>
 
       <!-- Navigation Links -->
-      <ul class="flex space-x-6 text-lg font-medium">
+      <ul class="flex space-x-4 sm:space-x-6 text-lg font-medium">
         <li>
-          <a href="#home" class="text-white hover:text-red-100 transition-colors duration-300 px-3 py-2 rounded-md hover:bg-red-600">Accueil</a>
+          <a href="#home" class="relative text-white hover:text-red-100 transition-all duration-300 px-4 py-2 rounded-full hover:bg-red-600 group">
+            Accueil
+            <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-red-100 transition-all duration-300 transform -translate-x-1/2 group-hover:w-full"></span>
+          </a>
         </li>
         <li>
-          <a href="#about" class="text-white hover:text-red-100 transition-colors duration-300 px-3 py-2 rounded-md hover:bg-red-600">À Propos</a>
+          <a href="#about" class="relative text-white hover:text-red-100 transition-all duration-300 px-4 py-2 rounded-full hover:bg-red-600 group">
+            À Propos
+            <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-red-100 transition-all duration-300 transform -translate-x-1/2 group-hover:w-full"></span>
+          </a>
         </li>
         <li>
-          <a href="#projects" class="text-white hover:text-red-100 transition-colors duration-300 px-3 py-2 rounded-md hover:bg-red-600">Projets</a>
+          <a href="#projects" class="relative text-white hover:text-red-100 transition-all duration-300 px-4 py-2 rounded-full hover:bg-red-600 group">
+            Projets
+            <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-red-100 transition-all duration-300 transform -translate-x-1/2 group-hover:w-full"></span>
+          </a>
         </li>
         <li>
-          <a href="#contact" class="text-white hover:text-red-100 transition-colors duration-300 px-3 py-2 rounded-md hover:bg-red-600">Contact</a>
+          <a href="#contact" class="relative text-white hover:text-red-100 transition-all duration-300 px-4 py-2 rounded-full hover:bg-red-600 group">
+            Contact
+            <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-red-100 transition-all duration-300 transform -translate-x-1/2 group-hover:w-full"></span>
+          </a>
         </li>
       </ul>
     </div>
@@ -187,84 +199,98 @@
   </section>
 
 
+  <section class="bg-white p-6 md:p-8 lg:p-12 rounded-2xl shadow-xl mb-8">
+    <h3 class="text-4xl font-extrabold text-red-700 mb-8 text-center">Mes Projets</h3>
 
-      <section class="bg-white p-6 md:p-8 lg:p-12 rounded-2xl shadow-xl mb-8" id="projects">
-  <h3 class="text-4xl font-extrabold text-red-700 mb-8 text-center">Mes Projets</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-    <!-- Project Card: SEPHERD -->
-    <div class="bg-gray-50 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out flex flex-col items-center text-center">
-      <h4 class="text-2xl font-bold text-red-600 mb-4">SEPHERD</h4>
-      <div class="flex justify-center mb-6">
-        <img
-          src="https://raw.githubusercontent.com/Testeh69/Sepherd/main/assets/sepherd.png"
-          alt="Logo Sepherd"
-          class="w-48 h-auto rounded-xl shadow-md border border-gray-200"
-          onerror="this.onerror=null;this.src='https://placehold.co/192x192/FEE2E2/B91C1C?text=Image+Not+Found';"
-        />
+      <!-- Project Card: SEPHERD -->
+      <div class="bg-gray-50 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out flex flex-col items-center text-center animate-fade-in-up relative group" style="animation-delay: 0.1s;">
+        <h4 class="text-2xl font-bold text-red-600 mb-4">SEPHERD</h4>
+        <div class="flex justify-center mb-6 relative w-full">
+          <img
+            src="https://raw.githubusercontent.com/Testeh69/Sepherd/main/assets/sepherd.png"
+            alt="Logo Sepherd"
+            class="w-48 h-auto rounded-xl shadow-md border border-gray-200"
+            onerror="this.onerror=null;this.src='https://placehold.co/192x192/FEE2E2/B91C1C?text=Image+Not+Found';"
+          />
+          <!-- Logos Overlay for SEPHERD -->
+          <div class="absolute inset-0 flex flex-wrap justify-center items-center bg-black bg-opacity-75 rounded-xl opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 ease-in-out p-2">
+            <img src="assets/cpp-svgrepo-com.svg" alt="C++ Logo" class="w-14 h-14 object-contain m-1" />
+            <img src="assets/git-svgrepo-com.svg" alt="Git Logo" class="w-14 h-14 object-contain m-1" />
+            <img src="assets/rasberry-pi-svgrepo-com.svg" alt="Raspberry Pi Logo" class="w-14 h-14 object-contain m-1" />
+          </div>
+        </div>
+        <p class="text-gray-700 mb-6 flex-grow">
+          Proxy léger en C++ conçu pour interfacer avec le serveur Ollama LLM, optimisé pour les systèmes embarqués comme le Raspberry Pi.
+        </p>
+        <a
+          href="https://github.com/Testeh69/Sepherd"
+          target="_blank"
+          class="inline-block px-6 py-3 bg-red-600 text-white text-lg font-semibold rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-75 transition-all duration-200 ease-in-out shadow-md hover:shadow-lg"
+        >
+          Voir le projet
+        </a>
       </div>
-      <p class="text-gray-700 mb-6 flex-grow">
-        Proxy léger en C++ conçu pour interfacer avec le serveur Ollama LLM, optimisé pour les systèmes embarqués comme le Raspberry Pi.
-      </p>
-      <a
-        href="https://github.com/Testeh69/Sepherd"
-        target="_blank"
-        class="inline-block px-6 py-3 bg-red-600 text-white text-lg font-semibold rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-75 transition-all duration-200 ease-in-out shadow-md hover:shadow-lg"
-      >
-        Voir le projet
-      </a>
-    </div>
 
-    <!-- Project Card: RuneCLI -->
-    <div class="bg-gray-50 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out flex flex-col items-center text-center">
-      <h4 class="text-2xl font-bold text-red-600 mb-4">RuneCLI</h4>
-      <div class="flex justify-center mb-6">
-        <img
-          src="https://raw.githubusercontent.com/Testeh69/runecli/main/assets/pictures/logo_rune_cli.png"
-          alt="Logo RuneCLI"
-          class="w-48 h-auto rounded-xl shadow-md border border-gray-200"
-          onerror="this.onerror=null;this.src='https://placehold.co/192x192/FEE2E2/B91C1C?text=Image+Not+Found';"
-        />
+      <!-- Project Card: RuneCLI -->
+      <div class="bg-gray-50 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out flex flex-col items-center text-center animate-fade-in-up relative group" style="animation-delay: 0.2s;">
+        <h4 class="text-2xl font-bold text-red-600 mb-4">RuneCLI</h4>
+        <div class="flex justify-center mb-6 relative w-full">
+          <img
+            src="https://raw.githubusercontent.com/Testeh69/runecli/main/assets/pictures/logo_rune_cli.png"
+            alt="Logo RuneCLI"
+            class="w-48 h-auto rounded-xl shadow-md border border-gray-200"
+            onerror="this.onerror=null;this.src='https://placehold.co/192x192/FEE2E2/B91C1C?text=Image+Not+Found';"
+          />
+          <!-- Logos Overlay for RuneCLI -->
+          <div class="absolute inset-0 flex flex-wrap justify-center items-center bg-black bg-opacity-75 rounded-xl opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 ease-in-out p-2">
+            <img src="assets/cpp-svgrepo-com.svg" alt="C++ Logo" class="w-14 h-14 object-contain m-1" />
+            <img src="assets/git-svgrepo-com.svg" alt="Git Logo" class="w-14 h-14 object-contain m-1" />
+            <img src="assets/rasberry-pi-svgrepo-com.svg" alt="Raspberry Pi Logo" class="w-14 h-14 object-contain m-1" />
+          </div>
+        </div>
+        <p class="text-gray-700 mb-6 flex-grow">
+          Un RPG en ligne de commande développé en C++17, offrant une expérience rétro avec création de personnage, combats au tour par tour, gestion d'inventaire et progression via des commandes simples.
+        </p>
+        <a
+          href="https://github.com/Testeh69/runecli"
+          target="_blank"
+          class="inline-block px-6 py-3 bg-red-600 text-white text-lg font-semibold rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-75 transition-all duration-200 ease-in-out shadow-md hover:shadow-lg"
+        >
+          Voir le projet
+        </a>
       </div>
-      <p class="text-gray-700 mb-6 flex-grow">
-        Un RPG en ligne de commande développé en C++17, offrant une expérience rétro avec création de personnage, combats au tour par tour, gestion d'inventaire et progression via des commandes simples.
-      </p>
-      <a
-        href="https://github.com/Testeh69/runecli"
-        target="_blank"
-        class="inline-block px-6 py-3 bg-red-600 text-white text-lg font-semibold rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-75 transition-all duration-200 ease-in-out shadow-md hover:shadow-lg"
-      >
-        Voir le projet
-      </a>
-    </div>
 
-    <!-- Project Card: Stockly -->
-    <div class="bg-gray-50 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out flex flex-col items-center text-center">
-      <h4 class="text-2xl font-bold text-red-600 mb-4">Stockly</h4>
-      <div class="flex justify-center mb-6">
-        <img
-          src="https://raw.githubusercontent.com/Testeh69/Stockly/main/assets/images/stockly_logo.png"
-          alt="Logo Stockly"
-          class="w-48 h-auto rounded-xl shadow-md border border-gray-200"
-          onerror="this.onerror=null;this.src='https://placehold.co/192x192/FEE2E2/B91C1C?text=Image+Not+Found';"
-        />
+      <!-- Project Card: Stockly -->
+      <div class="bg-gray-50 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out flex flex-col items-center text-center animate-fade-in-up relative group" style="animation-delay: 0.3s;">
+        <h4 class="text-2xl font-bold text-red-600 mb-4">Stockly</h4>
+        <div class="flex justify-center mb-6 relative w-full">
+          <img
+            src="https://raw.githubusercontent.com/Testeh69/Stockly/main/assets/images/stockly_logo.png"
+            alt="Logo Stockly"
+            class="w-48 h-auto rounded-xl shadow-md border border-gray-200"
+            onerror="this.onerror=null;this.src='https://placehold.co/192x192/FEE2E2/B91C1C?text=Image+Not+Found';"
+          />
+          <!-- React Logo Overlay for Stockly -->
+          <div class="absolute inset-0 flex justify-center items-center bg-black bg-opacity-75 rounded-xl opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 ease-in-out">
+            <img src="assets/react-svgrepo-com.svg" alt="React Logo" class="w-24 h-24 object-contain" />
+          </div>
+        </div>
+        <p class="text-gray-700 mb-6 flex-grow">
+          Stockly – Smart Inventory Management with QR Code Scanning.
+        </p>
+        <a
+          href="https://github.com/Testeh69/Stockly"
+          target="_blank"
+          class="inline-block px-6 py-3 bg-red-600 text-white text-lg font-semibold rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-75 transition-all duration-200 ease-in-out shadow-md hover:shadow-lg"
+        >
+          Voir le projet
+        </a>
       </div>
-      <p class="text-gray-700 mb-6 flex-grow">
-        Stockly – Smart Inventory Management with QR Code Scanning.
-      </p>
-      <a
-        href="https://github.com/Testeh69/Stockly"
-        target="_blank"
-        class="inline-block px-6 py-3 bg-red-600 text-white text-lg font-semibold rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-75 transition-all duration-200 ease-in-out shadow-md hover:shadow-lg"
-      >
-        Voir le projet
-      </a>
+
     </div>
-
-  </div>
-</section>
-
+  </section>
     </main>
 
     <footer class="bg-principal text-background-color-l text-center py-6 mt-8 shadow-inner" id="contact">
@@ -281,7 +307,7 @@
         </div>
     </footer>
     <script>
- tailwind.config = {
+  tailwind.config = {
     theme: {
       extend: {
         fontFamily: {
